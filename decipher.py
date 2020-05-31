@@ -1,8 +1,8 @@
 import random
 word = str(input('Plain text:'))
-inputcol = int(input("Number of columns: "))
 key = str(input("Key seperated using (;): "))
 key = key.split(';')
+inputcol = len(key)
 firstdict = {}
 counter2 = 0
 inputcol2 = 0
