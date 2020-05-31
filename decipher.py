@@ -1,6 +1,6 @@
 import random
-word = str(input('Plain text:'))
-key = str(input("Key seperated using (;): "))
+word = str(input('Cipher Text:'))
+key = str(input("Key: "))
 key = key.split(';')
 inputcol = len(key)
 firstdict = {}
@@ -50,7 +50,7 @@ while True:
             counterrow += 1
     except:
         break
-print(''.join(list2))
+print('Plain Text: {}'.format(''.join(list2)))
 
 
 

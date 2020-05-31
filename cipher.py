@@ -58,6 +58,6 @@ finalfinaltext = []
 for i in ciphertext:
     finalfinaltext.append(''.join(i))
 finalfinaltext = ''.join(finalfinaltext)
-print(finalfinaltext)
-print(';'.join(key))
+print('Cipher Text: {}'.format(finalfinaltext))
+print('Key: {}'.format(';'.join(key)))
 #end-----------------------
