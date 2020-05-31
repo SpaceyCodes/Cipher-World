@@ -1,6 +1,6 @@
 import random
+word = str(input('Plain text (please input "-" at random intervals):'))
 inputcol = int(input("Number of columns: "))
-word = str(input('Plain text'))
 lister = []
 finallist = []
 key = []
@@ -39,7 +39,6 @@ while True:
     except:
         finallist.remove(finallist[-1])
         break
-
 #------------------------------------------
 while True:
     try:
@@ -51,7 +50,7 @@ while True:
 #forming key and final display of ciphertext-------------------
 for i in ciphertext:
     try:
-        key.append(i[0])
+        key.append(str(i[0]))
         i.remove(i[0])
     except:
         break
@@ -60,64 +59,5 @@ for i in ciphertext:
     finalfinaltext.append(''.join(i))
 finalfinaltext = ''.join(finalfinaltext)
 print(finalfinaltext)
-print(key)
+print(';'.join(key))
 #end-----------------------
-inputcol = int(input("colmn: "))
-word = finalfinaltext
-lister = []
-finallist = []
-finallist.append([0])
-lister.append([])
-ciphertext = []
-countercolumn = 1
-counterrow = 0
-for i in word:
-    if countercolumn == inputcol:
-        lister.append([])
-        lister[counterrow].append(i)
-        counterrow += 1
-        countercolumn = 1
-    else:
-        lister[counterrow].append(i)
-        countercolumn += 1
-while True:
-    if countercolumn != inputcol + 1:
-        lister[counterrow].append('-')
-        countercolumn += 1
-    else:
-        break
-print(lister)
-firstdict = {}
-counter2 = 0
-for i in key:
-    try:
-        firstdict[i] = lister[counter2]
-        counter2 += 1
-    except:
-        break
-seconddict = {}
-print(firstdict)
-for i in sorted(firstdict):
-    seconddict[i] = firstdict[i]
-secondlist = []
-for i in seconddict:
-    secondlist.append(seconddict[i])
-list2 =[]
-countercolumn = 0
-counterrow = 0
-while True:
-    try:
-        if counterrow == inputcol - 1:
-            list2.append(secondlist[counterrow][countercolumn])
-            counterrow = 0
-            countercolumn += 1
-        else:
-            list2.append(secondlist[counterrow][countercolumn])
-            counterrow += 1
-    except:
-        break
-print(''.join(list2))
-
-
-
-
