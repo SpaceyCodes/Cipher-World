@@ -6,6 +6,8 @@ inputcol = len(key)
 firstdict = {}
 counter2 = 0
 inputcol2 = 0
+f = open("ciphertext.txt", "r")
+word = f.read()
 for i in word:
     inputcol2 += 1
 lister = []
@@ -26,13 +28,15 @@ for i in word:
         countercolumn += 1
 for i in key:
     try:
-        firstdict[i] = lister[counter2]
+        firstdict[int(i)] = lister[counter2]
         counter2 += 1
     except:
         break
+f.close()
 seconddict = {}
 for i in sorted(firstdict):
     seconddict[i] = firstdict[i]
+dwa = sorted(firstdict)
 secondlist = []
 for i in seconddict:
     secondlist.append(seconddict[i])
@@ -51,6 +55,11 @@ while True:
     except:
         break
 print('Plain Text: {}'.format(''.join(list2)))
+f = open("newtext.txt", "w")
+writing = ''.join(list2)
+f.write(writing)
+f.close()
+
 
 
 

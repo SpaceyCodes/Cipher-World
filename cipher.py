@@ -1,6 +1,7 @@
 import random
 word = str(input('Plain text (please input "-" at random intervals):'))
 inputcol = int(input("Number of columns: "))
+f = open("doctext.txt", "r")
 lister = []
 finallist = []
 key = []
@@ -9,7 +10,7 @@ lister.append([])
 ciphertext = []
 countercolumn = 1
 counterrow = 0
-for i in word:
+for i in f.read():
     if countercolumn == inputcol:
         lister.append([])
         lister[counterrow].append(i)
@@ -24,6 +25,7 @@ while True:
         countercolumn += 1
     else:
         break
+f.close()
 n = counterrow
 countercolumn2 = 0
 a = 0
@@ -59,5 +61,8 @@ for i in ciphertext:
     finalfinaltext.append(''.join(i))
 finalfinaltext = ''.join(finalfinaltext)
 print('Cipher Text: {}'.format(finalfinaltext))
+f = open("ciphertext.txt", "w")
+f.write(finalfinaltext)
+f.close()
 print('Key: {}'.format(';'.join(key)))
 #end-----------------------
