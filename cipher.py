@@ -1,7 +1,7 @@
 import random
 word = str(input('Plain text (please input "-" at random intervals):'))
 inputcol = int(input("Number of columns: "))
-f = open("doctext.txt", "r")
+f = open("C:/Users/User/user/Coding stuff/Coding/source/repos/Ciphers/text.txt", "r")
 lister = []
 finallist = []
 key = []
