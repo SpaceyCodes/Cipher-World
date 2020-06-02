@@ -1,5 +1,7 @@
 text.txt
 ciphertext.txt
 newtext.txt
-
+main.py
+other.py
+/__pycache__
 
